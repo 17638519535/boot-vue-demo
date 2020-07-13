@@ -4,103 +4,109 @@
 	<meta charset="UTF-8">
 	<title>首页</title>
 	<script src="/common/common-js.js" type="application/javascript"></script>
+<!--	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+<!--	<script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.12.0/index.js"></script>-->
+<!--	&lt;!&ndash; 引入组件库 &ndash;&gt;-->
+<!--	<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<!--	<script src="../static/js/vue.js"></script>-->
 </head>
 <body>
 <div id="app">
 	This is the index page of activiti!
-<!--	<el-button type="primary">测试element组件</el-button>-->
-<!--	<template>-->
-<!--		<el-popover-->
-<!--				placement="top-start"-->
-<!--				title="标题"-->
-<!--				width="200"-->
-<!--				trigger="hover"-->
-<!--				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">-->
-<!--			<el-button slot="reference">hover 激活</el-button>-->
-<!--		</el-popover>-->
+	<el-button type="primary">测试element组件</el-button>
 
-<!--		<el-popover-->
-<!--				placement="bottom"-->
-<!--				title="标题"-->
-<!--				width="200"-->
-<!--				trigger="click"-->
-<!--				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">-->
-<!--			<el-button slot="reference">click 激活</el-button>-->
-<!--		</el-popover>-->
+	<template>
+		<el-popover
+				placement="top-start"
+				title="标题"
+				width="200"
+				trigger="hover"
+				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+			<el-button slot="reference">hover 激活</el-button>
+		</el-popover>
 
-<!--		<el-popover-->
-<!--				ref="popover"-->
-<!--				placement="right"-->
-<!--				title="标题"-->
-<!--				width="200"-->
-<!--				trigger="focus"-->
-<!--				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">-->
-<!--		</el-popover>-->
-<!--		<el-button v-popover:popover>focus 激活</el-button>-->
+		<el-popover
+				placement="bottom"
+				title="标题"
+				width="200"
+				trigger="click"
+				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+			<el-button slot="reference">click 激活</el-button>
+		</el-popover>
 
-<!--		<el-popover-->
-<!--				placement="bottom"-->
-<!--				title="标题"-->
-<!--				width="200"-->
-<!--				trigger="manual"-->
-<!--				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"-->
-<!--				v-model="visible">-->
-<!--			<el-button slot="reference" @click="visible = !visible">手动激活</el-button>-->
-<!--		</el-popover>-->
-<!--	</template>-->
+		<el-popover
+				ref="popover"
+				placement="right"
+				title="标题"
+				width="200"
+				trigger="focus"
+				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+		</el-popover>
+		<el-button v-popover:popover>focus 激活</el-button>
+
+		<el-popover
+				placement="bottom"
+				title="标题"
+				width="200"
+				trigger="manual"
+				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+				v-model="visible">
+			<el-button slot="reference" @click="visible = !visible">手动激活</el-button>
+		</el-popover>
+	</template>
 
 
-<!--	<template>-->
-<!--		<el-table-->
-<!--				:data="tableData"-->
-<!--				style="width: 50%"-->
-<!--				max-height="250">-->
-<!--			<el-table-column-->
-<!--					fixed-->
-<!--					prop="date"-->
-<!--					label="日期"-->
-<!--					width="150">-->
-<!--			</el-table-column>-->
-<!--			<el-table-column-->
-<!--					prop="name"-->
-<!--					label="姓名"-->
-<!--					width="120">-->
-<!--			</el-table-column>-->
-<!--			<el-table-column-->
-<!--					prop="province"-->
-<!--					label="省份"-->
-<!--					width="120">-->
-<!--			</el-table-column>-->
-<!--			<el-table-column-->
-<!--					prop="city"-->
-<!--					label="市区"-->
-<!--					width="120">-->
-<!--			</el-table-column>-->
-<!--			<el-table-column-->
-<!--					prop="address"-->
-<!--					label="地址"-->
-<!--					width="300">-->
-<!--			</el-table-column>-->
-<!--			<el-table-column-->
-<!--					prop="zip"-->
-<!--					label="邮编"-->
-<!--					width="120">-->
-<!--			</el-table-column>-->
-<!--			<el-table-column-->
-<!--					fixed="right"-->
-<!--					label="操作"-->
-<!--					width="120">-->
-<!--				<template slot-scope="scope">-->
-<!--					<el-button-->
-<!--							@click.native.prevent="deleteRow(scope.$index, tableData)"-->
-<!--							type="text"-->
-<!--							size="small">-->
-<!--						移除-->
-<!--					</el-button>-->
-<!--				</template>-->
-<!--			</el-table-column>-->
-<!--		</el-table>-->
-<!--	</template>-->
+	<template>
+		<el-table
+				:data="tableData"
+				style="width: 50%"
+				max-height="250">
+			<el-table-column
+					fixed
+					prop="date"
+					label="日期"
+					width="150">
+			</el-table-column>
+			<el-table-column
+					prop="name"
+					label="姓名"
+					width="120">
+			</el-table-column>
+			<el-table-column
+					prop="province"
+					label="省份"
+					width="120">
+			</el-table-column>
+			<el-table-column
+					prop="city"
+					label="市区"
+					width="120">
+			</el-table-column>
+			<el-table-column
+					prop="address"
+					label="地址"
+					width="300">
+			</el-table-column>
+			<el-table-column
+					prop="zip"
+					label="邮编"
+					width="120">
+			</el-table-column>
+			<el-table-column
+					fixed="right"
+					label="操作"
+					width="120">
+				<template slot-scope="scope">
+					<el-button
+							@click.native.prevent="deleteRow(scope.$index, tableData)"
+							type="text"
+							size="small">
+						移除
+					</el-button>
+				</template>
+			</el-table-column>
+		</el-table>
+	</template>
 
 
 
