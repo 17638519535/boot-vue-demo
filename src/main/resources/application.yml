@@ -7,11 +7,5 @@ spring:
     #不用重启项目就能刷新页面
   thymeleaf:
     cache: false
-      #模板加载的路径
-#      mode: HTML5
-#      encoding: UTF-8
-#      servlet:
-#        content-type: text/html
-#      enabled: true
   mvc:
     static-path-pattern: /static/**
