@@ -1,135 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
 	<meta charset="UTF-8">
 	<title>首页</title>
 	<#include "common/common.html">
+  <style>
+	  html, body
+	  {
+		  margin: 0px 0px;
+		  width: 100%;
+		  height: 100%;
+	  }
+	  ul li{
 
+		  list-style: none;
+		  margin-top: 10px;
+		  margin-bottom: 10px;
+	  }
+	  ul{
+		  background: #303133;
+		  color: #ffffff;
+		   width: 10%;
+		  height: 1000px;
+		  display: inline-block;
+		  margin: 0px;
+	  }
+	  body{
+
+		  overflow: hidden;
+		  line-height: 24px;
+		  font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
+	  }
+	  iframe {
+		  /*position: absolute;*/
+		  width: 100%;
+		  height: 100%;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+	  }
+  </style>
 </head>
 <body>
 <div id="app">
+	<!--左侧菜单-->
+      <ul  >
+		<li v-for="(value, key, index) in menuData" @click="mainConst(value.url)" >{{value.system}}</li>
+	</ul>
+	<div style="width: 87%;height: 100%;   display: inline-table;" >
+		<a href="javascript:;">Close Current</a><a href="javascript:;">Close Current</a>
+		<span>sadddddddddddddddddddddddd</span>
+<!--		<h1>dsaaaaaaaaaaaaaa</h1>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+<!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
+		<div style="width: 100%;height: 100%"  v-html="mainData"></div>
+<!--		<h1>saddddddd</h1>-->
+<!--		<iframe src="/vue/user" height='100%' frameborder="0" marginwidth="1" marginheight="1"    scrolling="yes" ></iframe>-->
+<!--		<a src="/vue/user" >sadsad</a>-->
 
+	</div>
+<!--	<el-row> <el-button type="primary">主要按钮</el-button></el-row>-->
+<!--	This is the index page of activiti!-->
+<!--	<el-button type="primary">测试element组件</el-button>-->
+<!--	<p>${name}:<input type="text" v-model="name">&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;{{name}} </p>-->
 
-	<el-row> <el-button type="primary">主要按钮</el-button></el-row>
-	This is the index page of activiti!
-	<el-button type="primary">测试element组件</el-button>
-	<p>${name}:<input type="text" v-model="name">----------{{name}} </p>
-	<template>
-		<el-popover
-				placement="top-start"
-				title="标题"
-				width="200"
-				trigger="hover"
-				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-			<el-button slot="reference">hover 激活</el-button>
-		</el-popover>
-
-		<el-popover
-				placement="bottom"
-				title="标题"
-				width="200"
-				trigger="click"
-				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-			<el-button slot="reference">click 激活</el-button>
-		</el-popover>
-
-		<el-popover
-				ref="popover"
-				placement="right"
-				title="标题"
-				width="200"
-				trigger="focus"
-				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-		</el-popover>
-		<el-button v-popover:popover>focus 激活</el-button>
-
-		<el-popover
-				placement="bottom"
-				title="标题"
-				width="200"
-				trigger="manual"
-				content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
-				v-model="visible">
-			<el-button slot="reference" @click="visible = !visible">手动激活</el-button>
-		</el-popover>
-	</template>
-
-
-	<template>
-		<el-table
-				:data="tableData"
-				style="width: 50%"
-				max-height="250">
-			<el-table-column
-					fixed
-					prop="date"
-					label="日期"
-					width="150">
-			</el-table-column>
-			<el-table-column
-					prop="name"
-					label="姓名"
-					width="120">
-			</el-table-column>
-			<el-table-column
-					prop="province"
-					label="省份"
-					width="120">
-			</el-table-column>
-			<el-table-column
-					prop="city"
-					label="市区"
-					width="120">
-			</el-table-column>
-			<el-table-column
-					prop="address"
-					label="地址"
-					width="300">
-			</el-table-column>
-			<el-table-column
-					prop="zip"
-					label="邮编"
-					width="120">
-			</el-table-column>
-			<el-table-column
-					fixed="right"
-					label="操作"
-					width="120">
-				<template slot-scope="scope">
-					<el-button
-							@click.native.prevent="deleteRow(scope.$index, tableData)"
-							type="text"
-							size="small">
-						移除
-					</el-button>
-				</template>
-			</el-table-column>
-		</el-table>
-	</template>
-
-
-
-
-
-
-	<el-radio-group v-model="direction">
-		<el-radio label="ltr">从左往右开</el-radio>
-		<el-radio label="rtl">从右往左开</el-radio>
-		<el-radio label="ttb">从上往下开</el-radio>
-		<el-radio label="btt">从下往上开</el-radio>
-	</el-radio-group>
-
-	<el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
-		点我打开
-	</el-button>
-
-	<el-drawer
-			title="我是标题"
-			:visible.sync="drawer"
-			:direction="direction"
-			:before-close="handleClose">
-		<span>我来啦!</span>
-	</el-drawer>
 
 </div>
 
@@ -138,56 +77,32 @@
 		el: '#app',
 
 		data: {
-			name:'',
-			visible: false,
-			drawer: false,
-			direction: 'rtl',
-			message: 'Hello Vue!',
-			tableData: [{
-				date: '2016-05-02',
-				name: '王小虎',
-				province: '上海',
-				city: '普陀区',
-				province: '上海',
-				city: '普陀区',
-				address: '上海市普陀区金沙江路 1518 弄',
-				zip: 200333
-			}, {
-				date: '2016-05-04',
-				name: '王小虎',
-				province: '上海',
-				city: '普陀区',
-				address: '上海市普陀区金沙江路 1517 弄',
-				zip: 200333
-			}, {
-				date: '2016-05-01',
-				name: '王小虎',
-				province: '上海',
-				city: '普陀区',
-				address: '上海市普陀区金沙江路 1519 弄',
-				zip: 200333
-			}, {
-				date: '2016-05-03',
-				name: '王小虎',
-				province: '上海',
-				city: '普陀区',
-				address: '上海市普陀区金沙江路 1516 弄',
-				zip: 200333
-			}],
+			menuData:[],
+			mainData:"",
+			name:'sadsadsa',
+		},
+		created(){
+             console.log("初始化");
+             this.findMenu();
 		},
 		methods: {
-			deleteRow(index, rows) {
-				rows.splice(index, 1);
+
+			mainConst(url){
+				console.log("sadsads");
+				this.mainData = "<iframe src=\""+url+"\" height='100%' frameborder=\"0\" marginwidth=\"1\" marginheight=\"1\"    scrolling=\"yes\" ></iframe>"
 			},
-			handleClick(row) {
-				console.log(row);
-			},
-			handleClose(done) {
-				this.$confirm('确认关闭？')
-						.then(_ => {
-							done();
-						})
-						.catch(_ => {});
+
+			findMenu(){
+				let url='/vue/findMenu';
+				$.ajax({
+					url: url,
+					method: "GET",
+					async: false,
+				}).done(resp => {
+				this.menuData= resp;
+				  console.log(this.menuData);
+
+				})
 			},
 
 		},
