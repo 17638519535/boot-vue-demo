@@ -18,12 +18,15 @@
 		  margin-bottom: 10px;
 	  }
 	  ul{
+
 		  background: #303133;
 		  color: #ffffff;
 		   width: 10%;
-		  height: 1000px;
+		  height: 100%;
 		  display: inline-block;
 		  margin: 0px;
+		  position: absolute;
+
 	  }
 	  body{
 
@@ -32,12 +35,15 @@
 		  font: 14px Helvetica Neue, Helvetica, PingFang SC, Tahoma, Arial, sans-serif;
 	  }
 	  iframe {
-		  /*position: absolute;*/
+		  position: absolute;
 		  width: 100%;
-		  height: 100%;
+		  height: 97%;
 		  top: 0;
 		  right: 0;
 		  bottom: 0;
+	  }
+	  .letds{
+		  left:12.2%;
 	  }
   </style>
 </head>
@@ -47,7 +53,7 @@
       <ul  >
 		<li v-for="(value, key, index) in menuData" @click="mainConst(value.url)" >{{value.system}}</li>
 	</ul>
-	<div style="width: 87%;height: 100%;   display: inline-table;" >
+	<div class="letds" style="width: 87%;height: 100%;position: absolute;    display: inline-table;" >
 		<a href="javascript:;">Close Current</a><a href="javascript:;">Close Current</a>
 		<span>sadddddddddddddddddddddddd</span>
 <!--		<h1>dsaaaaaaaaaaaaaa</h1>-->
@@ -58,7 +64,7 @@
 <!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
 <!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
 <!--		<h2>dsaaaaaaaaaaaaaa</h2>-->
-		<div style="width: 100%;height: 100%"  v-html="mainData"></div>
+		<div style="width: 100%;height: 100%;position: absolute;"  v-html="mainData"></div>
 <!--		<h1>saddddddd</h1>-->
 <!--		<iframe src="/vue/user" height='100%' frameborder="0" marginwidth="1" marginheight="1"    scrolling="yes" ></iframe>-->
 <!--		<a src="/vue/user" >sadsad</a>-->
