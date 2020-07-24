@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+    <head>
     <meta charset="UTF-8">
     <title>Title</title>
+        <script type="text/javascript" src="../static/js/vue.js"></script>
+        <!--	<link href="../static/css/index.css" rel="stylesheet" type="text/css">-->
+        <!--	<script src="../static/js/index.js" type="text/javascript"></script>-->
+        <link href="../static/css/element-ui@2.12.0.min.css" rel="stylesheet" type="text/css">
+        <script src="../static/js/element-ui@2.12.0.min.js" type="text/javascript"></script>
+        <script src="../static/jqeury/jquery-3.1.1.min.js" type="text/javascript"></script>
     <style>
         body{
             margin: 0px;
         }
     </style>
 </head>
+    <body>
+    <div id="dept">
+       <el-row> <el-button type="primary">主要按钮</el-button></el-row>
+    This is the index page of activiti!
+    <el-button type="primary">测试element组件</el-button>
+    <p><input type="text" v-model="name">----------{{name}} </p>
 
    <h2>DEPT</h2>
 
+    </div>
+    <script>
+        new Vue({
+            el: '#dept',
+            data: {
+
+                name:'sadsadsa',
+            },
+            created(){
+                console.log("dept");
+
+            },
+            methods: {
+
+
+
+            },
+        })
+    </script>
+    </body>
 </html>
