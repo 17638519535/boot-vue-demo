@@ -1,10 +1,12 @@
-package myf.controller;
+package myf.user.controller;
 
+import myf.user.Srevise.UserSevise;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,12 +15,22 @@ import java.util.Map;
 @Controller
 @RequestMapping("/vue")
 public class IndexController {
+      @Resource
+      private UserSevise userSevise;
 
     @RequestMapping("/index")
     public String index(Model model){
         model.addAttribute("name","涨三倍");
+        userSevise.test();
         return "/index";
     }
+
+
+    @RequestMapping("/thread-test")
+    public void ThreadTest(Model model){
+    }
+
+
     @RequestMapping("/user")
     public String user(Model model){
 //        model.addAttribute("name","涨三倍");
