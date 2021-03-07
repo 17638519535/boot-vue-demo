@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
 
+/**
+ * 线程池
+ */
+
 public class NBThreadList {
     public static void main(String[] string) throws ExecutionException, InterruptedException {
         ExecutorService service = Executors.newFixedThreadPool(2);
