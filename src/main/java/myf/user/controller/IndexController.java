@@ -1,5 +1,6 @@
 package myf.user.controller;
 
+import myf.excel.jxls.JxlsUtils;
 import myf.user.Srevise.UserSevise;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -7,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +21,7 @@ public class IndexController {
       private UserSevise userSevise;
 
     @RequestMapping("/index")
-    public String index(Model model){
+    public String index(Model model) throws IOException {
         model.addAttribute("name","涨三倍");
         userSevise.test();
         return "/index";
