@@ -14,9 +14,9 @@ import java.util.concurrent.*;
  */
 @Slf4j
 public class NBThread implements Runnable,Callable<String> {
-    private List<String> data;
-    private NBThread(){}
-    private NBThread(List<String> data){
+    public List<String> data;
+    public NBThread(){}
+    public  NBThread(List<String> data){
         this.data=data;
     }
 
