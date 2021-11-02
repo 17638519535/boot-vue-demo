@@ -30,7 +30,7 @@ public class NBThread implements Runnable,Callable<String> {
     public static void  executorThread(){
         ExecutorService service =Executors.newFixedThreadPool(3);
         final List<String> data = getData();
-        /**统一资源分配*/
+        /**主线程统一资源分配*/
         for(int i=0;i<data.size();i++){
             int finalI = i;
             service.submit(new Runnable() {
@@ -42,8 +42,10 @@ public class NBThread implements Runnable,Callable<String> {
                 }
             });
         }
+        /**然后主线程执行了*/
         log.error("关闭线程池d");
         service.shutdown();
+        log.error("执行一次");
     }
 
     /**
