@@ -1,4 +1,4 @@
-package myf.excel.jxls;
+package myf.utils.file.excel.jxls;
 
 import lombok.extern.java.Log;
 import myf.entity.DeptInfo;
@@ -9,13 +9,10 @@ import org.jxls.transform.Transformer;
 import org.jxls.transform.poi.PoiTransformer;
 import org.jxls.util.JxlsHelper;
 import org.springframework.beans.BeanUtils;
-import org.springframework.util.ResourceUtils;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * JXLS 场景复杂特质模板
