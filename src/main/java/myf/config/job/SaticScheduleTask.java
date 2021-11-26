@@ -1,6 +1,7 @@
 package myf.config.job;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -19,20 +20,21 @@ import java.util.concurrent.Executors;
 @Configuration
 @EnableScheduling
 @Slf4j
+@ConditionalOnProperty(prefix = "scheduling",name="enabled",havingValue = "true")
 public class SaticScheduleTask {
 
     private List<String> listData;
 
-//       @Scheduled(cron = "0/3 * * * * ?")
-//       @Async("taskExecutor")
-//       public void threadCheduling() throws InterruptedException {
-//           log.info("当前运行的线程名称：" + Thread.currentThread().getName()+"---");
-//           Thread.sleep(40000);
-//       }
+       @Scheduled(cron = "${task.timed-task-date}")
+       @Async("taskExecutor")
+       public void threadCheduling() throws InterruptedException {
+           log.info("当前运行的线程名称：" + Thread.currentThread().getName()+"---");
+           Thread.sleep(40000);
+       }
 
 
     //
-    @Scheduled(cron = "0/1 * * * * ?")
+    @Scheduled(cron = "${task.timed-task-date}")
     public  void configureTasks() throws InterruptedException, ExecutionException {
         System.out.println("执行静态定时任务时间: " + LocalDateTime.now());
         Map<String, CompletableFuture> resultMap = new HashMap<>();

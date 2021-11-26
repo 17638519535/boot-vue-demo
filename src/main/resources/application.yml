@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   #controller返回页面的后缀
   freemarker:
@@ -9,3 +9,7 @@ spring:
     cache: false
   mvc:
     static-path-pattern: /static/**
+task:
+  timed-task-date: 0/1 * * * * ?
+scheduling:
+  enabled: false   #false 关闭定时任务   #true 开启
